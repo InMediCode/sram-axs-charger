@@ -161,8 +161,6 @@ Removing the existing Micro-USB connector can be challenging due to the robust s
 
 ![Solder USB-C step 1](images/solder%20usb%20c%201_web.png)
 
-![Solder USB-C step 2](images/solder%20usb%20c%202_web.png)
-
 #### Step 5: Soldering Method
 **Hot Plate Method:**
 1. Clean everything thoroughly with isopropyl alcohol and cotton swabs
@@ -185,6 +183,8 @@ Removing the existing Micro-USB connector can be challenging due to the robust s
 8. Use a multimeter to verify there are no short circuits between pins
 
 **Tip:** Both methods ensure even heating and better solder flow for reliable connections. Follow up with soldering iron work for secure individual pin connections.
+
+![Solder USB-C step 2](images/solder%20usb%20c%202_web.png)
 
 ![Solder USB-C step 3](images/solder%20usb%20c%203_web.png)
 
