@@ -51,7 +51,7 @@ The SRAM AXS wireless shifting system uses an outdated micro USB charging connec
 ![Housing unscrewed](images/housing%20unscrewed_web.png)
 
 ### Step 2: Opening the Charger
-**Method:** Use a tiny flathead screwdriver to carefully pry open the charger at the side seam.
+Use a tiny flathead screwdriver to carefully pry open the charger at the side seam.
 
 1. Locate the seam where the two halves of the charger housing meet
 2. Insert the tiny flathead screwdriver into the seam at the side of the charger
@@ -85,8 +85,10 @@ After examining the PCB, the micro USB-B connector pinout is as follows:
 | 4   | D-       | Unused |
 | 5   | VBUS     | Connected to +5V |
 
+So it's important to use a MC002 USB-C breakout board with 5V on the right side and GND on the left side.
 
 ---
+⚠️ Stop here if you don't have advanced soldering skills and know what you are doing!
 
 ## ⚡ USB-C Conversion
 
@@ -94,32 +96,15 @@ After examining the PCB, the micro USB-B connector pinout is as follows:
 |------|
 | Soldering station |
 | Hot plate **OR** hot air station |
-| Soldering wire |
+| Soldering wire / paste |
 | Flux |
 | Desoldering wick |
-| Isopropyl alcohol |
-| Q-tips |
-| USB-C breakout board (MC002) |
+| Isopropyl alcohol &  Q-tips |
 | Multimeter |
 
-### Circuit Analysis
-
-#### Original Micro USB-B Pinout
-| Pin | Standard Function | SRAM AXS Connection |
-|-----|-------------------|--------------------|
-| 1   | VBUS (+5V)        | Ground |
-| 2   | D- (Data)         | Ground |
-| 3   | D+ (Data)         | Unused |
-| 4   | ID               | Unused |
-| 5   | GND              | +5V Power |
-
-So it's important to use a MC002 USB-C breakout board with 5V on the right side and GND on the left side.
-
-#### USB-C Conversion Requirements
-- **Power:** Use pins 1 & 2 for Ground, pin 5 for +5V
-- **Voltage:** 5V DC input
-- **Data pins:** Not required (charging only)
-- **Current:** Standard USB charging current (~500mA-1A)
+| Required Parts |
+|------|
+| USB-C breakout board (MC002) |
 
 ### Preparation
 Before starting the conversion, ensure your workspace is properly set up:
@@ -136,10 +121,9 @@ Before analyzing the PCB, remove the black foam padding from the back of the PCB
 
 1. Use the tiny flathead screwdriver to carefully pry off the black foam
 2. Work gently to avoid damaging the PCB or components underneath
-3. The foam may be adhesive-backed, so remove it slowly
+3. The foam is adhesive-backed, so remove it slowly
 4. Clean the PCB surface with isopropyl alcohol and cotton swabs to remove any adhesive residue
 
-**Foam Removal Process:**
 ![Remove foam step 1](images/remove%20foam%201_web.png)
 
 ![Remove foam step 2](images/remove%20foam%202_web.png)
@@ -148,6 +132,8 @@ Before analyzing the PCB, remove the black foam padding from the back of the PCB
 
 #### Step 2: Micro USB Connector Removal
 Removing the existing micro USB connector can be challenging due to the robust solder joints.
+
+**Important:** Only heat the specific area around the connector to avoid damaging other components on the PCB.
 
 **Hot Plate Method:**
 1. Place only the small area of the PCB (where the micro USB connector is located) on the hot plate
@@ -160,21 +146,22 @@ Removing the existing micro USB connector can be challenging due to the robust s
 2. Apply heat evenly to the connector until solder becomes molten
 3. Remove the connector with tweezers once solder is molten
 
-#### Step 3: Clean the Pads
-1. Clean the remaining solder from the pads using soldering iron and desoldering wick/braid
-2. Clean the PCB thoroughly with isopropyl alcohol and cotton swabs to remove flux residue and debris
-
-**Important:** Only heat the specific area around the connector to avoid damaging other components on the PCB.
-
-**Micro USB Connector Removal:**
 ![Micro USB removal step 1](images/micro%20usb%20removal%201_web.png)
 
 ![Micro USB removal step 2](images/micro%20usb%20removal%202_web.png)
+
+#### Step 3: Clean the Pads
+1. Clean the remaining solder from the pads using soldering iron and desoldering wick
+2. Clean the PCB thoroughly with isopropyl alcohol and cotton swabs to remove flux residue and debris
 
 #### Step 4: USB-C Installation Preparation
 1. Apply flux to the cleaned PCB pads where the micro USB connector was removed
 2. Apply flux to the corresponding pins/pads on the USB-C breakout board
 3. Pre-tin both the PCB pads and the USB-C board pins with a small amount of solder
+
+![Solder USB-C step 1](images/solder%20usb%20c%201_web.png)
+
+![Solder USB-C step 2](images/solder%20usb%20c%202_web.png)
 
 #### Step 5: Soldering Method
 **Hot Plate Method:**
@@ -197,18 +184,13 @@ Removing the existing micro USB connector can be challenging due to the robust s
 
 **Tip:** Both methods ensure even heating and better solder flow for reliable connections. Follow up with soldering iron work for secure individual pin connections.
 
-**USB-C Soldering Process:**
-![Solder USB-C step 1](images/solder%20usb%20c%201_web.png)
-
-![Solder USB-C step 2](images/solder%20usb%20c%202_web.png)
-
 ![Solder USB-C step 3](images/solder%20usb%20c%203_web.png)
 
 ![Solder USB-C step 4](images/solder%20usb%20c%204_web.png)
 
 #### Step 6: Cleaning and Finishing
 - Clean flux residue with isopropyl alcohol and cotton swabs
-- Secure connections with hot glue
+- Secure USB-C port with hot glue
 
 #### Step 7: Housing Modification
 - File the plastic housing opening to accommodate the new USB-C connector
@@ -228,7 +210,6 @@ Removing the existing micro USB connector can be challenging due to the robust s
 4. Reassemble the charger housing
 5. Test charging functionality with a compatible battery
 
-**Testing USB-C Functionality:**
 ![Testing USB-C](images/testing%20usb%20c_web.png)
 
 ## 🎯 Results
