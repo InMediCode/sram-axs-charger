@@ -3,12 +3,28 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Difficulty-Advanced-red" alt="Difficulty: Advanced">
   <img src="https://img.shields.io/badge/Tools-Soldering_Required-orange" alt="Soldering Required">
-  <img src="https://img.shields.io/badge/Time-2--3_Hours-blue" alt="Time: 2-3 Hours">
+  <img src="https://img.shields.io/badge/Time-1--2_Hours-blue" alt="Time: 1-2 Hours">
 </div>
 
-> **⚠️ Disclaimer:** This modification will void your warranty and requires advanced soldering skills. Proceed at your own risk.
-
 A detailed teardown and modification guide for converting the SRAM AXS charger from micro USB to a modern USB-C connector.
+
+![Original charger](images/original.png)
+
+## ⚠️ Safety Warnings
+
+> This teardown and modification will void your warranty and requires advanced soldering skills. Proceed at your own risk.
+
+<div style="background-color: #ffe6e6; border: 2px solid #ff4444; border-radius: 8px; padding: 15px; margin: 15px 0;">
+
+### 🚨 Critical Safety Information
+
+- **Fire Hazard:** Modifying charging equipment can create fire or safety risks
+- **Electrical Safety:** Ensure proper voltage and current ratings before testing
+- **Component Protection:** Test thoroughly with cheap devices before using with expensive components
+- **Warranty Void:** This modification will void all manufacturer warranties
+- **Skill Level:** Advanced soldering skills required - not suitable for beginners
+
+</div>
 
 ## Overview
 
@@ -16,41 +32,23 @@ The SRAM AXS wireless shifting system uses an outdated micro USB charging connec
 
 ## Project Goals
 
-- [ ] Complete teardown documentation
-- [ ] Identify internal components and charging circuit
-- [ ] Design USB-C conversion solution
-- [ ] Test charging functionality
-- [ ] Document reassembly process
+- [x] Complete teardown documentation
+- [x] Find USB-C conversion solution
+- [x] Test charging functionality
 
-## 🛠️ Tools Required
+## 🔓 Teardown
 
-### 🔓 Basic Teardown
-| Tool |
+| Required Tools |
 |------|
-| Torx T10??? screwdriver |
+| Torx T-10 screwdriver |
 | Tiny flathead screwdriver |
-
-### ⚡ USB-C Conversion
-| Tool |
-|------|
-| Soldering station |
-| Hot plate **OR** hot air station |
-| Soldering wire |
-| Flux |
-| Desoldering wick |
-| Isopropyl alcohol |
-| Q-tips |
-| USB-C breakout board |
-| Multimeter |
-
-## Teardown Process
 
 ### Step 1: Locate and Access the Hidden Screw
 1. Find the screw location under the sticker on the charger housing
 2. Carefully cut a small hole in the sticker to access the screw
-3. Unscrew the Torx screw using the Torx T10??? screwdriver
+3. Unscrew the Torx screw using the Torx T-10 screwdriver
 
-*[Add images showing sticker location, cutting process, and screw removal]*
+![Housing unscrewed](images/housing%20unscrewed.png)
 
 ### Step 2: Opening the Charger
 **Method:** Use a tiny flathead screwdriver to carefully pry open the charger at the side seam.
@@ -62,32 +60,66 @@ The SRAM AXS wireless shifting system uses an outdated micro USB charging connec
 
 **Caution:** Apply gentle, steady pressure to avoid cracking the plastic housing.
 
-*[Add images showing the opening process and tool placement]*
+![Opening charger](images/opening%20charger.png)
 
 ### Step 3: PCB Inspection
-Once the housing is opened, you'll have access to the internal PCB (Printed Circuit Board).
+Once the housing is opened, you'll have access to the internal PCB.
 
-*[Add photos of the PCB showing component layout and connections]*
+**PCB Top Side:**
+![PCB Upper](images/pcb%20upper.png)
 
-### Step 4: Foam Removal
-Before analyzing the PCB, remove the black foam padding from the back of the PCB.
+**PCB Bottom Side:**
+![PCB Bottom](images/pcb%20bottom.png)
 
-1. Use the tiny flathead screwdriver to carefully pry off the black foam
-2. Work gently to avoid damaging the PCB or components underneath
-3. The foam may be adhesive-backed, so remove it slowly
-4. Clean the PCB surface with isopropyl alcohol and cotton swabs to remove any adhesive residue
+#### Micro USB-B Port Pinout Analysis
 
-*[Add photos showing foam removal and cleaning process]*
+After examining the PCB, the micro USB-B connector pinout is as follows:
 
-### Step 5: Internal Analysis
-*[Identify charging circuit, power management, and connection points]*
+![Micro USB Spec](images/micro%20usb%20detail.png)
+
+| Pin | Function | Connection |
+|-----|----------|------------|
+| 1   | GND      | Connected to Ground |
+| 2   | ID       | Connected to Ground |
+| 3   | D+       | Unused |
+| 4   | D-       | Unused |
+| 5   | VBUS     | Connected to +5V |
+
 
 ---
 
 ## ⚡ USB-C Conversion
 
+| Required Tools |
+|------|
+| Soldering station |
+| Hot plate **OR** hot air station |
+| Soldering wire |
+| Flux |
+| Desoldering wick |
+| Isopropyl alcohol |
+| Q-tips |
+| USB-C breakout board (MC002) |
+| Multimeter |
+
 ### Circuit Analysis
-*[Document voltage requirements, pinout, and power delivery specs]*
+
+#### Original Micro USB-B Pinout
+| Pin | Standard Function | SRAM AXS Connection |
+|-----|-------------------|--------------------|
+| 1   | VBUS (+5V)        | Ground |
+| 2   | D- (Data)         | Ground |
+| 3   | D+ (Data)         | Unused |
+| 4   | ID               | Unused |
+| 5   | GND              | +5V Power |
+
+So it's important to use a MC002 USB-C breakout board with 5V on the right side and GND on the left side.
+
+#### USB-C Conversion Requirements
+- **Power:** Use pins 1 & 2 for Ground, pin 5 for +5V
+- **Voltage:** 5V DC input
+- **Data pins:** Not required (charging only)
+- **Current:** Standard USB charging current (~500mA-1A)
 
 ### Preparation
 Before starting the conversion, ensure your workspace is properly set up:
@@ -99,7 +131,22 @@ Before starting the conversion, ensure your workspace is properly set up:
 
 ### Modification Process
 
-#### Step 1: Micro USB Connector Removal
+### Step 1: Foam Removal
+Before analyzing the PCB, remove the black foam padding from the back of the PCB.
+
+1. Use the tiny flathead screwdriver to carefully pry off the black foam
+2. Work gently to avoid damaging the PCB or components underneath
+3. The foam may be adhesive-backed, so remove it slowly
+4. Clean the PCB surface with isopropyl alcohol and cotton swabs to remove any adhesive residue
+
+**Foam Removal Process:**
+![Remove foam step 1](images/remove%20foam%201.png)
+
+![Remove foam step 2](images/remove%20foam%202.png)
+
+![Remove foam step 3](images/remove%20foam%203.png)
+
+#### Step 2: Micro USB Connector Removal
 Removing the existing micro USB connector can be challenging due to the robust solder joints.
 
 **Hot Plate Method:**
@@ -113,20 +160,23 @@ Removing the existing micro USB connector can be challenging due to the robust s
 2. Apply heat evenly to the connector until solder becomes molten
 3. Remove the connector with tweezers once solder is molten
 
-#### Step 2: Clean the Pads
+#### Step 3: Clean the Pads
 1. Clean the remaining solder from the pads using soldering iron and desoldering wick/braid
 2. Clean the PCB thoroughly with isopropyl alcohol and cotton swabs to remove flux residue and debris
 
 **Important:** Only heat the specific area around the connector to avoid damaging other components on the PCB.
 
-*[Add photos showing hot plate positioning, connector removal, and cleaning process]*
+**Micro USB Connector Removal:**
+![Micro USB removal step 1](images/micro%20usb%20removal%201.png)
 
-#### Step 3: USB-C Installation Preparation
+![Micro USB removal step 2](images/micro%20usb%20removal%202.png)
+
+#### Step 4: USB-C Installation Preparation
 1. Apply flux to the cleaned PCB pads where the micro USB connector was removed
 2. Apply flux to the corresponding pins/pads on the USB-C breakout board
 3. Pre-tin both the PCB pads and the USB-C board pins with a small amount of solder
 
-#### Step 4: Soldering Method
+#### Step 5: Soldering Method
 **Hot Plate Method:**
 1. Clean everything thoroughly with isopropyl alcohol and cotton swabs
 2. Place the PCB on the hot plate (focusing on the connector area)
@@ -147,18 +197,29 @@ Removing the existing micro USB connector can be challenging due to the robust s
 
 **Tip:** Both methods ensure even heating and better solder flow for reliable connections. Follow up with soldering iron work for secure individual pin connections.
 
-*[Add photos showing cleaning, hot plate positioning, and USB-C placement process]*
+**USB-C Soldering Process:**
+![Solder USB-C step 1](images/solder%20usb%20c%201.png)
 
-#### Step 5: Cleaning and Finishing
+![Solder USB-C step 2](images/solder%20usb%20c%202.png)
+
+![Solder USB-C step 3](images/solder%20usb%20c%203.png)
+
+![Solder USB-C step 4](images/solder%20usb%20c%204.png)
+
+#### Step 6: Cleaning and Finishing
 - Clean flux residue with isopropyl alcohol and cotton swabs
 - Secure connections with hot glue
 
-#### Step 6: Housing Modification
+#### Step 7: Housing Modification
 - File the plastic housing opening to accommodate the new USB-C connector
 - Test fit the USB-C connector through the modified opening
 - Ensure smooth insertion and removal of USB-C cables
 
-*[Add photos of filing process and connector fitting]*
+**Filed Housing:**
+![Housing with sticker filed](images/housing%20filed.png)
+
+**USB-C Installed in Housing:**
+![USB-C in housing](images/usb%20c%20in%20housing.png)
 
 ### Testing
 1. Check for short circuits between the pins (especially + and -) using a multimeter
@@ -167,7 +228,8 @@ Removing the existing micro USB connector can be challenging due to the robust s
 4. Reassemble the charger housing
 5. Test charging functionality with a compatible battery
 
-*[Add photos of multimeter testing, LED status, cable testing, and reassembly]*
+**Testing USB-C Functionality:**
+![Testing USB-C](images/testing%20usb%20c.png)
 
 ## 🎯 Results
 
@@ -179,22 +241,6 @@ After completing this modification, you no longer need to bring a separate micro
 - ✅ Reduced cable count for travel
 - ✅ Modern connector standard
 - ✅ Reversible plug orientation
-
-*[Add photos of final result and comparison with original]*
-
-## ⚠️ Safety Warnings
-
-<div style="background-color: #ffe6e6; border: 2px solid #ff4444; border-radius: 8px; padding: 15px; margin: 15px 0;">
-
-### 🚨 Critical Safety Information
-
-- **Fire Hazard:** Modifying charging equipment can create fire or safety risks
-- **Electrical Safety:** Ensure proper voltage and current ratings before testing
-- **Component Protection:** Test thoroughly with cheap devices before using with expensive components
-- **Warranty Void:** This modification will void all manufacturer warranties
-- **Skill Level:** Advanced soldering skills required - not suitable for beginners
-
-</div>
 
 ## 📄 License
 
