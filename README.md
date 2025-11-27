@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Time-1--2_Hours-blue" alt="Time: 1-2 Hours">
 </div>
 
-A detailed teardown and modification guide for converting the SRAM AXS charger from micro USB to a modern USB-C connector.
+A detailed teardown and modification guide for converting the SRAM AXS charger from Micro-USB to a modern USB-C connector.
 
 ![Original charger](images/original_web.png)
 
@@ -28,7 +28,7 @@ A detailed teardown and modification guide for converting the SRAM AXS charger f
 
 ## Overview
 
-The SRAM AXS wireless shifting system uses an outdated micro USB charging connector that can be inconvenient for travel and daily use. This project documents the process of teardown and conversion to a modern USB-C connector for improved compatibility and convenience.
+The SRAM AXS wireless shifting system uses an outdated Micro-USB charging connector that can be inconvenient for travel and daily use. This project documents the teardown process and conversion to a modern USB-C connector for improved compatibility and convenience.
 
 ## Project Goals
 
@@ -71,9 +71,9 @@ Once the housing is opened, you'll have access to the internal PCB.
 **PCB Bottom Side:**
 ![PCB Bottom](images/pcb%20bottom_web.png)
 
-#### Micro USB-B Port Pinout Analysis
+#### Micro-USB Port Pinout Analysis
 
-After examining the PCB, the micro USB-B connector pinout is as follows:
+After examining the PCB, the Micro-USB connector pinout is as follows:
 
 ![Micro USB Spec](images/micro%20usb%20detail_web.png)
 
@@ -85,10 +85,10 @@ After examining the PCB, the micro USB-B connector pinout is as follows:
 | 4   | D-       | Unused |
 | 5   | VBUS     | Connected to +5V |
 
-So it's important to use a MC002 USB-C breakout board with 5V on the right side and GND on the left side.
+Therefore, it's important to use an MC002 USB-C breakout board with 5V on the right side and GND on the left side.
 
 ---
-⚠️ Stop here if you don't have advanced soldering skills and know what you are doing!
+⚠️ **Stop here if you don't have advanced soldering skills and don't know what you're doing!**
 
 ## ⚡ USB-C Conversion
 
@@ -96,10 +96,10 @@ So it's important to use a MC002 USB-C breakout board with 5V on the right side 
 |------|
 | Soldering station |
 | Hot plate **OR** hot air station |
-| Soldering wire / paste |
+| Soldering wire/paste |
 | Flux |
 | Desoldering wick |
-| Isopropyl alcohol &  Q-tips |
+| Isopropyl alcohol & cotton swabs |
 | Multimeter |
 
 | Required Parts |
@@ -109,8 +109,8 @@ So it's important to use a MC002 USB-C breakout board with 5V on the right side 
 ### Preparation
 Before starting the conversion, ensure your workspace is properly set up:
 
-1. Set up soldering station at appropriate temperature
-2. Prepare hot plate / hot air soldering station
+1. Set up the soldering station at the appropriate temperature
+2. Prepare the hot plate/hot air soldering station
 3. Have flux, soldering wire, and cleaning supplies ready
 4. Ensure proper ventilation for soldering work
 
@@ -130,19 +130,19 @@ Before analyzing the PCB, remove the black foam padding from the back of the PCB
 
 ![Remove foam step 3](images/remove%20foam%203_web.png)
 
-#### Step 2: Micro USB Connector Removal
-Removing the existing micro USB connector can be challenging due to the robust solder joints.
+#### Step 2: Micro-USB Connector Removal
+Removing the existing Micro-USB connector can be challenging due to the robust solder joints.
 
 **Important:** Only heat the specific area around the connector to avoid damaging other components on the PCB.
 
 **Hot Plate Method:**
-1. Place only the small area of the PCB (where the micro USB connector is located) on the hot plate
+1. Place only the small area of the PCB (where the Micro-USB connector is located) on the hot plate
 2. Ensure the backside of this area has no components that could be damaged by heat
 3. Heat the area until the solder becomes molten
-4. Remove the micro USB connector with tweezers
+4. Remove the Micro-USB connector with tweezers
 
 **Alternative: Hot Air Station Method:**
-1. Use a hot air soldering station to heat the micro USB connector area
+1. Use a hot air soldering station to heat the Micro-USB connector area
 2. Apply heat evenly to the connector until solder becomes molten
 3. Remove the connector with tweezers once solder is molten
 
@@ -151,11 +151,11 @@ Removing the existing micro USB connector can be challenging due to the robust s
 ![Micro USB removal step 2](images/micro%20usb%20removal%202_web.png)
 
 #### Step 3: Clean the Pads
-1. Clean the remaining solder from the pads using soldering iron and desoldering wick
+1. Clean the remaining solder from the pads using a soldering iron and desoldering wick
 2. Clean the PCB thoroughly with isopropyl alcohol and cotton swabs to remove flux residue and debris
 
 #### Step 4: USB-C Installation Preparation
-1. Apply flux to the cleaned PCB pads where the micro USB connector was removed
+1. Apply flux to the cleaned PCB pads where the Micro-USB connector was removed
 2. Apply flux to the corresponding pins/pads on the USB-C breakout board
 3. Pre-tin both the PCB pads and the USB-C board pins with a small amount of solder
 
@@ -199,15 +199,15 @@ Removing the existing micro USB connector can be challenging due to the robust s
 - Test fit the USB-C connector through the modified opening
 - Ensure smooth insertion and removal of USB-C cables
 
-**Filed Housing:**
+**Modified Housing:**
 ![Housing with sticker filed](images/housing%20filed_web.png)
 
 **USB-C Installed in Housing:**
 ![USB-C in housing](images/usb%20c%20in%20housing_web.png)
 
 ### Testing
-1. Check for short circuits between the pins (especially + and -) using a multimeter
-2. Plug in the PCB to a USB-C power source and check if the blue LED is lighting up
+1. Check for short circuits between the pins (especially positive and negative) using a multimeter
+2. Connect the PCB to a USB-C power source and verify that the blue LED lights up
 3. Test USB-C cable in both directions to ensure proper connection
 4. Reassemble the charger housing
 5. Test charging functionality with a compatible battery
@@ -229,7 +229,7 @@ After completing this modification, you no longer need to bring a separate micro
 
 This documentation is provided for **educational purposes only**.
 
-**Modify at your own risk** - the authors are not responsible for any damage to equipment or personal injury.
+**Modify at your own risk** - the author is not responsible for any damage to equipment or personal injury.
 
 ---
 
