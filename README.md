@@ -166,16 +166,18 @@ Removing the existing micro USB connector can be challenging due to the robust s
 #### Step 5: Soldering Method
 **Hot Plate Method:**
 1. Clean everything thoroughly with isopropyl alcohol and cotton swabs
-2. Place the PCB on the hot plate (focusing on the connector area)
-3. Wait for the solder to become molten
-4. While the solder is molten, carefully position and place the USB-C breakout board
-5. Allow to cool and form solid connections
+2. Apply flux to both the PCB pads and USB-C breakout board pads
+3. Place the PCB on the hot plate (focusing on the connector area)
+4. Wait for the solder to become molten
+5. While the solder is molten, carefully position and place the USB-C breakout board
+6. Allow to cool and form solid connections
 
 **Alternative: Hot Air Station Method:**
 1. Clean everything thoroughly with isopropyl alcohol and cotton swabs
-2. Position the USB-C breakout board on the PCB
-3. Use hot air station to heat the connection area until solder becomes molten
-4. Allow to cool and form solid connections
+2. Apply flux to both the PCB pads and USB-C breakout board pads
+3. Position the USB-C breakout board on the PCB
+4. Use hot air station to heat the connection area until solder becomes molten
+5. Allow to cool and form solid connections
 
 **Final Steps (for both methods):**
 6. Once cooled, use the soldering iron to properly solder each individual pin
