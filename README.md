@@ -8,7 +8,7 @@
 
 A detailed teardown and modification guide for converting the SRAM AXS charger from micro USB to a modern USB-C connector.
 
-![Original charger](images/original.png)
+![Original charger](images/original_web.png)
 
 ## ⚠️ Safety Warnings
 
@@ -48,7 +48,7 @@ The SRAM AXS wireless shifting system uses an outdated micro USB charging connec
 2. Carefully cut a small hole in the sticker to access the screw
 3. Unscrew the Torx screw using the Torx T-10 screwdriver
 
-![Housing unscrewed](images/housing%20unscrewed.png)
+![Housing unscrewed](images/housing%20unscrewed_web.png)
 
 ### Step 2: Opening the Charger
 **Method:** Use a tiny flathead screwdriver to carefully pry open the charger at the side seam.
@@ -60,22 +60,22 @@ The SRAM AXS wireless shifting system uses an outdated micro USB charging connec
 
 **Caution:** Apply gentle, steady pressure to avoid cracking the plastic housing.
 
-![Opening charger](images/opening%20charger.png)
+![Opening charger](images/opening%20charger_web.png)
 
 ### Step 3: PCB Inspection
 Once the housing is opened, you'll have access to the internal PCB.
 
 **PCB Top Side:**
-![PCB Upper](images/pcb%20upper.png)
+![PCB Upper](images/pcb%20upper_web.png)
 
 **PCB Bottom Side:**
-![PCB Bottom](images/pcb%20bottom.png)
+![PCB Bottom](images/pcb%20bottom_web.png)
 
 #### Micro USB-B Port Pinout Analysis
 
 After examining the PCB, the micro USB-B connector pinout is as follows:
 
-![Micro USB Spec](images/micro%20usb%20detail.png)
+![Micro USB Spec](images/micro%20usb%20detail_web.png)
 
 | Pin | Function | Connection |
 |-----|----------|------------|
@@ -140,11 +140,11 @@ Before analyzing the PCB, remove the black foam padding from the back of the PCB
 4. Clean the PCB surface with isopropyl alcohol and cotton swabs to remove any adhesive residue
 
 **Foam Removal Process:**
-![Remove foam step 1](images/remove%20foam%201.png)
+![Remove foam step 1](images/remove%20foam%201_web.png)
 
-![Remove foam step 2](images/remove%20foam%202.png)
+![Remove foam step 2](images/remove%20foam%202_web.png)
 
-![Remove foam step 3](images/remove%20foam%203.png)
+![Remove foam step 3](images/remove%20foam%203_web.png)
 
 #### Step 2: Micro USB Connector Removal
 Removing the existing micro USB connector can be challenging due to the robust solder joints.
@@ -167,9 +167,9 @@ Removing the existing micro USB connector can be challenging due to the robust s
 **Important:** Only heat the specific area around the connector to avoid damaging other components on the PCB.
 
 **Micro USB Connector Removal:**
-![Micro USB removal step 1](images/micro%20usb%20removal%201.png)
+![Micro USB removal step 1](images/micro%20usb%20removal%201_web.png)
 
-![Micro USB removal step 2](images/micro%20usb%20removal%202.png)
+![Micro USB removal step 2](images/micro%20usb%20removal%202_web.png)
 
 #### Step 4: USB-C Installation Preparation
 1. Apply flux to the cleaned PCB pads where the micro USB connector was removed
@@ -198,13 +198,13 @@ Removing the existing micro USB connector can be challenging due to the robust s
 **Tip:** Both methods ensure even heating and better solder flow for reliable connections. Follow up with soldering iron work for secure individual pin connections.
 
 **USB-C Soldering Process:**
-![Solder USB-C step 1](images/solder%20usb%20c%201.png)
+![Solder USB-C step 1](images/solder%20usb%20c%201_web.png)
 
-![Solder USB-C step 2](images/solder%20usb%20c%202.png)
+![Solder USB-C step 2](images/solder%20usb%20c%202_web.png)
 
-![Solder USB-C step 3](images/solder%20usb%20c%203.png)
+![Solder USB-C step 3](images/solder%20usb%20c%203_web.png)
 
-![Solder USB-C step 4](images/solder%20usb%20c%204.png)
+![Solder USB-C step 4](images/solder%20usb%20c%204_web.png)
 
 #### Step 6: Cleaning and Finishing
 - Clean flux residue with isopropyl alcohol and cotton swabs
@@ -216,10 +216,10 @@ Removing the existing micro USB connector can be challenging due to the robust s
 - Ensure smooth insertion and removal of USB-C cables
 
 **Filed Housing:**
-![Housing with sticker filed](images/housing%20filed.png)
+![Housing with sticker filed](images/housing%20filed_web.png)
 
 **USB-C Installed in Housing:**
-![USB-C in housing](images/usb%20c%20in%20housing.png)
+![USB-C in housing](images/usb%20c%20in%20housing_web.png)
 
 ### Testing
 1. Check for short circuits between the pins (especially + and -) using a multimeter
@@ -229,7 +229,7 @@ Removing the existing micro USB connector can be challenging due to the robust s
 5. Test charging functionality with a compatible battery
 
 **Testing USB-C Functionality:**
-![Testing USB-C](images/testing%20usb%20c.png)
+![Testing USB-C](images/testing%20usb%20c_web.png)
 
 ## 🎯 Results
 
