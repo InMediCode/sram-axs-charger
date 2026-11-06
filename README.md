@@ -181,6 +181,7 @@ Removing the existing Micro-USB connector can be challenging due to the robust s
 6. Once cooled, use the soldering iron to properly solder each individual pin
 7. Check for any solder bridges between adjacent pins
 8. Use a multimeter to verify there are no short circuits between pins
+9. Solder the metal sleeve of the USB C connector to the through hole anchor pads at the front for stress relief. This can replace hot glue.
 
 **Tip:** Both methods ensure even heating and better solder flow for reliable connections. Follow up with soldering iron work for secure individual pin connections.
 
@@ -190,9 +191,11 @@ Removing the existing Micro-USB connector can be challenging due to the robust s
 
 ![Solder USB-C step 4](images/solder%20usb%20c%204_web.png)
 
+![Solder USB-C step 9](images/solder%20usb%20c%209_web.jpg)
+
 #### Step 6: Cleaning and Finishing
 - Clean flux residue with isopropyl alcohol and cotton swabs
-- Secure USB-C port with hot glue
+- (optional) Secure USB-C port with hot glue
 
 #### Step 7: Housing Modification
 - File the plastic housing opening to accommodate the new USB-C connector
